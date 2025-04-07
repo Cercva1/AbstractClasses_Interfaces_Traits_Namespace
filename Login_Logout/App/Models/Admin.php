@@ -13,7 +13,7 @@ class Admin extends AbstractUser implements AuthInterface {
         return "Admin";
     }
 
-    public function login($email, $password): string {
+    public function login($email, $password) {
         if ($email === $this->email && password_verify($password, $this->password)) {
             $this->logActivity( "Admin $this->name logged in.");
             return "Admin logged in successfully.";
